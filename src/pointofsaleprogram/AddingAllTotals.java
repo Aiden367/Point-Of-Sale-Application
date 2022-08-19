@@ -3,14 +3,46 @@ package pointofsaleprogram;
 
 import java.util.ArrayList;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 
 public class AddingAllTotals 
 {
     private int displaySubTotal;
-    //PointOfSaleDisplay pointOfSaleDisplay = new PointOfSaleDisplay();
     private JTable recieptTable;
-    ArrayList<Integer> arrList = new ArrayList<Integer>();
+    private JTextField subTotalTextField;
+    private JTextField taxTextField;
+    private JTextField totalTextField;
+    
+    public void setTotalTextField(JTextField orderTotal)
+    {
+        this.totalTextField = orderTotal;
+    }
+    
+    public JTextField getTotalTextField()
+    {
+        return totalTextField;
+    }
+    
+    public void setTaxTextField(JTextField orderTax)
+    {
+        this.taxTextField = orderTax;
+    }
+    
+    public JTextField getTaxTextField()
+    {
+        return taxTextField;
+    }
+    
+    public void setSubTotalTextField(JTextField orderSubTotal)
+    {
+        this.subTotalTextField = orderSubTotal;
+    }
+    
+    public JTextField getSubTotalTextField()
+    {
+        return subTotalTextField;
+    }
     
      public void setSubTotal(int value)
     {
@@ -37,10 +69,35 @@ public class AddingAllTotals
         int subTotal = 0;
       for(int i = 0; i<getReceiptTable().getRowCount(); i++)
       {
-              subTotal += Integer.parseInt(getReceiptTable().getValueAt(i,2).toString());
+              subTotal += Integer.parseInt(getReceiptTable().getValueAt(i,2).toString());      
       }  
-     
+      String displaySubTotal = Integer.toString(subTotal);
+       getSubTotalTextField().setText(displaySubTotal);
       return subTotal;
+    }
+    
+    public int calculateTax()
+    {
+        int sum = Integer.parseInt(getSubTotalTextField().getText());
+        
+        int tax = 4;
+        
+        int totalTax = sum/tax;
+        
+        getTaxTextField().setText(Integer.toString(totalTax));
+        
+        return totalTax;
+    }
+    
+    
+    public int calculateTotal()
+    {
+        int sum = Integer.parseInt(getSubTotalTextField().getText());
+        int tax = Integer.parseInt(getTaxTextField().getText());
+        
+        int total = sum + tax;
+        getTotalTextField().setText(Integer.toString(total));
+        return total;
     }
     
 }

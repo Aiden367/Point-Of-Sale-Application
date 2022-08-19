@@ -430,12 +430,12 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="oneButton" alignment="0" max="32767" attributes="0"/>
+                      <Component id="oneButton" alignment="0" pref="81" max="32767" attributes="0"/>
                       <Component id="fourButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="sevenButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="zeroButton" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="29" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="eightButton" pref="74" max="32767" attributes="0"/>
                       <Component id="fiveButton" max="32767" attributes="0"/>

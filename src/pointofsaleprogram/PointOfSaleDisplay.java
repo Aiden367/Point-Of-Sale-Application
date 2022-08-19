@@ -10,7 +10,11 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
     
     public PointOfSaleDisplay() {
         initComponents();
-        
+        //addingAllTotals.setReceiptTable(recieptTable);
+        addingAllTotals.setSubTotalTextField(subTotalTextField);
+        addingAllTotals.setTaxTextField(taxTextField);
+        addingAllTotals.setTotalTextField(totalTextField);
+        //addingAllTotals.calculateSubTotal();
     }
 
     /**
@@ -445,11 +449,11 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(oneButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(oneButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
                     .addComponent(fourButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sevenButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(zeroButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(eightButton, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
                     .addComponent(fiveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -686,11 +690,13 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemFour();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemFourButtonActionPerformed
 
     private void payButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payButtonActionPerformed
-       String subTotal = Integer.toString(addingAllTotals.calculateSubTotal()); 
-       subTotalTextField.setText(subTotal);
+      addingAllTotals.calculateSubTotal();
     }//GEN-LAST:event_payButtonActionPerformed
 
     private void eightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightButtonActionPerformed
@@ -708,102 +714,146 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
 
     private void itemOneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemOneButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
-       
       addingAllTotals.setReceiptTable(recieptTable);
-     
-      
+      addingAllTotals.calculateSubTotal();
       addingItemsToTable.addingItemOne();
-      
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemOneButtonActionPerformed
 
     private void itemTwoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTwoButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
-      addingItemsToTable.addingItemTwo();        
+      addingItemsToTable.addingItemTwo(); 
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemTwoButtonActionPerformed
 
     private void itemThreeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemThreeButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
-      addingItemsToTable.addingItemThree();        // TODO add your handling code here:
+      addingItemsToTable.addingItemThree(); 
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemThreeButtonActionPerformed
 
     private void itemFiveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFiveButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
-      addingItemsToTable.addingItemFive();        // TODO add your handling code here:
+      addingItemsToTable.addingItemFive();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemFiveButtonActionPerformed
 
     private void itemSixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSixButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemSix();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemSixButtonActionPerformed
 
     private void itemSevenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSevenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemSeven();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemSevenButtonActionPerformed
 
     private void itemEightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEightButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemEight();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemEightButtonActionPerformed
 
     private void itemNineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNineButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemNine();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemNineButtonActionPerformed
 
     private void itemTenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemTen();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemTenButtonActionPerformed
 
     private void itemElevenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemElevenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemEleven();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemElevenButtonActionPerformed
 
     private void itemTwelveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTwelveButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemTwelve();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemTwelveButtonActionPerformed
 
     private void itemThirteenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemThirteenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemThirteen();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemThirteenButtonActionPerformed
 
     private void itemFourteenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFourteenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemFourteen();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemFourteenButtonActionPerformed
 
     private void itemFifteenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFifteenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemFifteen();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemFifteenButtonActionPerformed
 
     private void itemSixteenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSixteenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
       addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemSixteen();
+      addingAllTotals.calculateSubTotal();
+      addingAllTotals.calculateTax();
+      addingAllTotals.calculateTotal();
     }//GEN-LAST:event_itemSixteenButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
          removingItems.setReceiptTable(recieptTable);
          addingAllTotals.setReceiptTable(recieptTable);
          removingItems.removeSelectedRow();
+         addingAllTotals.calculateTax();
+         addingAllTotals.calculateTotal();
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
