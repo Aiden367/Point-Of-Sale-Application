@@ -2,7 +2,7 @@
 package pointofsaleprogram;
 
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JTextField;
 
 
 public class PointOfSaleDisplay extends javax.swing.JFrame {
@@ -10,6 +10,7 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
     
     public PointOfSaleDisplay() {
         initComponents();
+        
     }
 
     /**
@@ -562,10 +563,20 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
         });
 
         resetButton.setText("Reset");
+        resetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetButtonActionPerformed(evt);
+            }
+        });
 
         printButton.setText("Print");
 
         removeButton.setText("Remove");
+        removeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeButtonActionPerformed(evt);
+            }
+        });
 
         exitButton.setText("Exit");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -647,7 +658,8 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void subTotalTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subTotalTextFieldActionPerformed
-        // TODO add your handling code here:
+       String subTotal = String.valueOf(addingAllTotals.calculateSubTotal()); 
+       subTotalTextField.setText(subTotal);
     }//GEN-LAST:event_subTotalTextFieldActionPerformed
 
     private void taxTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taxTextFieldActionPerformed
@@ -672,11 +684,13 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
 
     private void itemFourButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFourButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemFour();
     }//GEN-LAST:event_itemFourButtonActionPerformed
 
     private void payButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payButtonActionPerformed
-        // TODO add your handling code here:
+       String subTotal = Integer.toString(addingAllTotals.calculateSubTotal()); 
+       subTotalTextField.setText(subTotal);
     }//GEN-LAST:event_payButtonActionPerformed
 
     private void eightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightButtonActionPerformed
@@ -694,80 +708,122 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
 
     private void itemOneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemOneButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+       
+      addingAllTotals.setReceiptTable(recieptTable);
+     
+      
       addingItemsToTable.addingItemOne();
       
     }//GEN-LAST:event_itemOneButtonActionPerformed
 
     private void itemTwoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTwoButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemTwo();        
     }//GEN-LAST:event_itemTwoButtonActionPerformed
 
     private void itemThreeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemThreeButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemThree();        // TODO add your handling code here:
     }//GEN-LAST:event_itemThreeButtonActionPerformed
 
     private void itemFiveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFiveButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemFive();        // TODO add your handling code here:
     }//GEN-LAST:event_itemFiveButtonActionPerformed
 
     private void itemSixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSixButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemSix();
     }//GEN-LAST:event_itemSixButtonActionPerformed
 
     private void itemSevenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSevenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemSeven();
     }//GEN-LAST:event_itemSevenButtonActionPerformed
 
     private void itemEightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEightButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemEight();
     }//GEN-LAST:event_itemEightButtonActionPerformed
 
     private void itemNineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNineButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemNine();
     }//GEN-LAST:event_itemNineButtonActionPerformed
 
     private void itemTenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemTen();
     }//GEN-LAST:event_itemTenButtonActionPerformed
 
     private void itemElevenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemElevenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemEleven();
     }//GEN-LAST:event_itemElevenButtonActionPerformed
 
     private void itemTwelveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTwelveButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemTwelve();
     }//GEN-LAST:event_itemTwelveButtonActionPerformed
 
     private void itemThirteenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemThirteenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemThirteen();
     }//GEN-LAST:event_itemThirteenButtonActionPerformed
 
     private void itemFourteenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFourteenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemFourteen();
     }//GEN-LAST:event_itemFourteenButtonActionPerformed
 
     private void itemFifteenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFifteenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemFifteen();
     }//GEN-LAST:event_itemFifteenButtonActionPerformed
 
     private void itemSixteenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSixteenButtonActionPerformed
       addingItemsToTable.setReceiptTable(recieptTable);
+      addingAllTotals.setReceiptTable(recieptTable);
       addingItemsToTable.addingItemSixteen();
     }//GEN-LAST:event_itemSixteenButtonActionPerformed
 
+    private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
+         removingItems.setReceiptTable(recieptTable);
+         addingAllTotals.setReceiptTable(recieptTable);
+         removingItems.removeSelectedRow();
+    }//GEN-LAST:event_removeButtonActionPerformed
+
+    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
+      
+        removingItems.setReceiptTable(recieptTable);
+        removingItems.setCashTextField(cashTextField);
+        removingItems.setSubTotalTextField(subTotalTextField);
+        removingItems.setTotalTextField(totalTextField);
+        removingItems.setChangeTextField(changeTextField);
+        removingItems.setTaxTextField(taxTextField);
+        removingItems.clearAll();
+        
+    }//GEN-LAST:event_resetButtonActionPerformed
+
+    public void subTotalText(){
+        String subTotal = String.valueOf(addingAllTotals.calculateSubTotal()); 
+       subTotalTextField.setText(subTotal);
+    }
+    
+   
     
 //    public static void main(String args[]) {
 //       
@@ -778,8 +834,9 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
 //        });
     AddingItemsToTable addingItemsToTable = new AddingItemsToTable();
     
-    
-
+    RemovingItems removingItems = new RemovingItems();
+    AddingAllTotals addingAllTotals = new AddingAllTotals();
+    private int subTotal;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel actionPanel;
     private javax.swing.JTextField cashTextField;
