@@ -13,6 +13,27 @@ public class AddingAllTotals
     private JTextField subTotalTextField;
     private JTextField taxTextField;
     private JTextField totalTextField;
+    private JTextField totalChangeTextField;
+    private JTextField cashTextField;
+    public void setCashTextField(JTextField orderCash)
+    {
+        this.cashTextField = orderCash;
+    }
+    
+    public JTextField getCashTextField()
+    {
+        return cashTextField;
+    }
+    
+    public void setTotalChangeTextField(JTextField change)
+    {
+        this.totalChangeTextField = change;
+    }
+    
+    public JTextField getTotalChangeTextField()
+    {
+      return totalChangeTextField;  
+    }
     
     public void setTotalTextField(JTextField orderTotal)
     {
@@ -100,4 +121,16 @@ public class AddingAllTotals
         return total;
     }
     
+    public int calculateChange()
+    {
+        int total = Integer.parseInt(getTotalTextField().getText());
+        
+        int cash = Integer.parseInt(getCashTextField().getText());
+        
+        int sum = cash - total;
+        
+        getTotalChangeTextField().setText(Integer.toString(sum));
+        
+        return sum;
+    }
 }

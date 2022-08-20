@@ -11,9 +11,26 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
     public PointOfSaleDisplay() {
         initComponents();
         //addingAllTotals.setReceiptTable(recieptTable);
+        
         addingAllTotals.setSubTotalTextField(subTotalTextField);
         addingAllTotals.setTaxTextField(taxTextField);
         addingAllTotals.setTotalTextField(totalTextField);
+        addingNumbersToCash.setNineButton(nineButton);
+        addingNumbersToCash.setEightButton(eightButton);
+        addingNumbersToCash.setSevenButton(sevenButton);
+        addingNumbersToCash.setSixButton(sixButton);
+        addingNumbersToCash.setFiveButton(fiveButton);
+        addingNumbersToCash.setFourButton(fourButton);
+        addingNumbersToCash.setThreeButton(threeButton);
+        addingNumbersToCash.setTwoButton(twoButton);
+        addingNumbersToCash.setOneButton(oneButton);
+        addingNumbersToCash.setDotButton(dotButton);
+        addingNumbersToCash.setClearButton(clearButton);
+        addingNumbersToCash.setCashTextField(cashTextField);
+        addingNumbersToCash.setZeroButton(zeroButton);
+        addingAllTotals.setTotalChangeTextField(changeTextField);
+        addingAllTotals.setCashTextField(cashTextField);
+        
         //addingAllTotals.calculateSubTotal();
     }
 
@@ -371,12 +388,27 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
 
         nineButton.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         nineButton.setText("9");
+        nineButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nineButtonActionPerformed(evt);
+            }
+        });
 
         fourButton.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         fourButton.setText("4");
+        fourButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fourButtonActionPerformed(evt);
+            }
+        });
 
         fiveButton.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         fiveButton.setText("5");
+        fiveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fiveButtonActionPerformed(evt);
+            }
+        });
 
         sevenButton.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         sevenButton.setText("7");
@@ -630,35 +662,43 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sevenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenButtonActionPerformed
-        
+      addingNumbersToCash.addSeven();
+      addingAllTotals.calculateChange();
     }//GEN-LAST:event_sevenButtonActionPerformed
 
     private void sixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixButtonActionPerformed
-        // TODO add your handling code here:
+        addingNumbersToCash.addSix();
+        addingAllTotals.calculateChange();
     }//GEN-LAST:event_sixButtonActionPerformed
 
     private void oneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneButtonActionPerformed
-        // TODO add your handling code here:
+       addingNumbersToCash.addOne();
+       addingAllTotals.calculateChange();
     }//GEN-LAST:event_oneButtonActionPerformed
 
     private void twoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoButtonActionPerformed
-        // TODO add your handling code here:
+       addingNumbersToCash.addTwo();
+       addingAllTotals.calculateChange();
     }//GEN-LAST:event_twoButtonActionPerformed
 
     private void threeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeButtonActionPerformed
-        // TODO add your handling code here:
+        addingNumbersToCash.addThree();
+        addingAllTotals.calculateChange();
     }//GEN-LAST:event_threeButtonActionPerformed
 
     private void zeroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroButtonActionPerformed
-        // TODO add your handling code here:
+       addingNumbersToCash.addZero();
+       addingAllTotals.calculateChange();
     }//GEN-LAST:event_zeroButtonActionPerformed
 
     private void dotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dotButtonActionPerformed
-        // TODO add your handling code here:
+       addingNumbersToCash.addDot();
+       addingAllTotals.calculateChange();
     }//GEN-LAST:event_dotButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        // TODO add your handling code here:
+        addingNumbersToCash.addClear();
+        addingAllTotals.calculateChange();
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void subTotalTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subTotalTextFieldActionPerformed
@@ -700,7 +740,8 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
     }//GEN-LAST:event_payButtonActionPerformed
 
     private void eightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightButtonActionPerformed
-        // TODO add your handling code here:
+       addingNumbersToCash.addEight();
+       addingAllTotals.calculateChange();
     }//GEN-LAST:event_eightButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -720,6 +761,7 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
       addingAllTotals.calculateSubTotal();
       addingAllTotals.calculateTax();
       addingAllTotals.calculateTotal();
+      
     }//GEN-LAST:event_itemOneButtonActionPerformed
 
     private void itemTwoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTwoButtonActionPerformed
@@ -868,6 +910,21 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
         
     }//GEN-LAST:event_resetButtonActionPerformed
 
+    private void fourButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourButtonActionPerformed
+      addingNumbersToCash.addFour();
+      addingAllTotals.calculateChange();
+    }//GEN-LAST:event_fourButtonActionPerformed
+
+    private void nineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nineButtonActionPerformed
+        addingNumbersToCash.addNine();
+        addingAllTotals.calculateChange();
+    }//GEN-LAST:event_nineButtonActionPerformed
+
+    private void fiveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiveButtonActionPerformed
+        addingNumbersToCash.addFive();
+        addingAllTotals.calculateChange();
+    }//GEN-LAST:event_fiveButtonActionPerformed
+
     public void subTotalText(){
         String subTotal = String.valueOf(addingAllTotals.calculateSubTotal()); 
        subTotalTextField.setText(subTotal);
@@ -886,6 +943,7 @@ public class PointOfSaleDisplay extends javax.swing.JFrame {
     
     RemovingItems removingItems = new RemovingItems();
     AddingAllTotals addingAllTotals = new AddingAllTotals();
+    AddingNumbersToCash addingNumbersToCash = new AddingNumbersToCash();
     private int subTotal;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel actionPanel;
