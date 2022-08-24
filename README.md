@@ -2,7 +2,7 @@
 
 
 
->I created this project to allow cashiers at a store to be able to scan and add customers items to the system to calculate the total purchase of goods and to log all purchases to the database to make it easier for the company to calculate its total profit at the end of the month
+>I created this project to allow cashiers at a store to be able to scan and add customers items to the system to calculate the total purchase of goods and to log all purchases to the database to make it easier for the company to calculate its total profit at the end of the month.
 
 ---
 
