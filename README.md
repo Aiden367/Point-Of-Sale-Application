@@ -20,7 +20,7 @@
 ## Description
 
 The Point Of Sale Application  is a programme that was created to allow for cashiers at a store to scan and log all purchases of a customer, thus allowing all purchases
-to be added to the SQL Database to allow for the business to calculate all of its purchases for the month.
+to be added to the SQL Database to allow for the business to calculate all of its purchases for the month
 
 #### Technologies
 
